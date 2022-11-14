@@ -12,6 +12,12 @@
     <h1>Etch-A-Sketch</h1>
     <div class="container">
     </div>
+    <div class="btnPanel">
+        <button onclick="changeColor('black')">black</button>
+        <button onclick="changeColor('white')">erase</button>
+        <button onclick="changeColor('rainbow')">rainbow</button>
+        <button onclick="resetBoard()">reset</button>
+    </div>
     <div>
         <input type="text" placeholder="size of board" value="16" onchange="changeSize(this.value)">
         <button>set size</button>
