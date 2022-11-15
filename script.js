@@ -13,19 +13,21 @@ function generateBoard(size) {
         let square = document.createElement('div');
         square.classList.add('square');
         square.style.backgroundColor = "white";
-        square.style.border = "0.5px solid black";
+        square.style.border = "0.1px solid lightgray";
         square.addEventListener("mouseover", colorSquare);
         container.appendChild(square);
     };
 };
 
-generateBoard(16);
+generateBoard(32);
 
 function changeSize(input) {
+    let error = document.querySelector('.error');
     if (input >= 2 && input <= 100) {
-        generateBoard(input);    
+        generateBoard(input);
+        error.style.display = 'none';    
     } else {
-        console.log('wrong size');
+        error.style.display = 'block';
     };
 };
 
@@ -37,6 +39,9 @@ function colorSquare() {
     if (click) {
         if (color === 'rainbow') {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else if (color === 'custom'){
+            let customColor = document.getElementById('color');
+            this.style.backgroundColor = customColor.value;
         } else {
             this.style.backgroundColor = color;
         }
@@ -49,8 +54,10 @@ function resetBoard() {
     squares.forEach((div)=> div.style.backgroundColor = 'white');
 }
 
-document.querySelector('body').addEventListener('click', ()=>{
-    click = !click;
+document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.tagName != "BUTTON") {
+        click = !click;
+    }
 })
 
 

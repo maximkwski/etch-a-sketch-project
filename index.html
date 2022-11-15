@@ -9,18 +9,27 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <div class="container">
-    </div>
-    <div class="btnPanel">
-        <button onclick="changeColor('black')">black</button>
-        <button onclick="changeColor('white')">erase</button>
-        <button onclick="changeColor('rainbow')">rainbow</button>
-        <button onclick="resetBoard()">reset</button>
-    </div>
-    <div>
-        <input type="text" placeholder="size of board" value="16" onchange="changeSize(this.value)">
-        <button>set size</button>
+    <div class="main">
+        <h1>Etch-A-Sketch</h1>
+        <div class="container">
+        </div>
+        <div class="btnPanel">
+            <div class="btn-colors">
+                <button onclick="changeColor('black')">black</button>
+                <button onclick="changeColor('rainbow')">rainbow</button>
+                <button onclick="changeColor('white')">erase</button>
+                <button onclick="resetBoard()">reset</button>
+            </div>
+            <div>
+                <label for="color">Select your color:</label>
+                <input type="color" id="color" name="color" value="#ff0000" onclick="changeColor('custom')">
+            </div>
+            <div class="sizeinput">
+                <input type="number" placeholder="size of board" value="32" onchange="changeSize(this.value)">
+                <button>set size</button>
+            </div>
+        </div>
+        <div class="error">Please choose between 2 and 100</div>
     </div>
 </body>
 </html>
