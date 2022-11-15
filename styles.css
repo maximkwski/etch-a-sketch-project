@@ -41,6 +41,8 @@ h1 {
     flex-direction: column;
     text-align: center;
     gap: 8px;
+    margin-bottom: 24px;
+
 }
 
 button {
@@ -64,7 +66,19 @@ input {
     background-color: white;
 }
 
+footer {
+    text-align: center;
+    background-color: lavender;
+    padding: 8px 0;
+}
 
+a {
+    text-decoration: none;
+}
+
+#icon {
+    width: 15px;
+}
 
 .error {
     display: none;

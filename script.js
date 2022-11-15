@@ -58,7 +58,7 @@ document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.tagName != "BUTTON") {
         click = !click;
     }
-})
+});
 
 
 
